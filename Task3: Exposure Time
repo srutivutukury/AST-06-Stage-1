@@ -13,6 +13,7 @@ TransposedData.csv = args.file
 with open("Transposed Data.csv", 'rb') as csvfile:
 
 #after parsing through a csv file and extract the data from only collumn 10(exposure time) of a specific targetname.
+#Total exposure time on each mask (adding the times in column "exposure time") under a single project/targetname/object
 
 	def exposuretime(targetname):
 		totaltimes = []
