@@ -21,8 +21,8 @@ with open("Transposed Data.csv", 'rb') as csvfile:
         	elapsed_time = [10]
     	for row in reader:
     		match = re.search(r'targetname', line)
-			if match:
-				totaltimes.append(row[10])
+                        if match:
+                                totaltimes.append(row[10])
 		print sum(totaltimes), "seconds"
 	
 	if __name__== "__main__":
