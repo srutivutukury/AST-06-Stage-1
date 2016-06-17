@@ -116,7 +116,8 @@ with open('Data.csv') as f:
             elif projanswer == "5":
                 sys.exit()
 	
-	
+#Specific Target/Mask Info
+
 	elif answer == "3":  #total exposure time(elapsed time) on each mask(target name)
 		targetname = raw_input('Enter the name of the specific mask(target name) of which you want to know the total exposure time: ')
         	with open('Data.txt') as f: #use data from txt file
