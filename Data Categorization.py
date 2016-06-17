@@ -94,9 +94,8 @@ with open('Data.csv') as f:
                                 sys.exit()
                             elif numorquit == "5":
                                 sys.exit()
-                                
-                        else:
-                            print('That project is not part of this database. Please try again')
+                            else:
+                            	print('That project is not part of this database. Please try again')
                 elif maskanswer == "3":
                     projname = raw_input('Enter the name of the project of which you want the to know the number of nights assigned: ')
                     if projname in datalist[14]:
