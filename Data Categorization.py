@@ -97,7 +97,20 @@ with open('Data.csv') as f:
                         else:
                             print('That project is not part of this database. Please try again')
                 #elif maskanswer == "2":
-                    #PUT UR EXPOSURE STUFF HERE
+                    #function totals the exposure time(elapsed time) of the viewed target
+                    def exposuretime3(file_name, targetname): #use data from txt file
+	                    with open(file_name) as f:
+		                    lines = f.readlines()
+		                    totaltimes = []
+		                    for line in lines:
+			                    if targetname in line:
+				                    totaltimes.append(line.split()[11]) #append value from elapsedtime/exposuretime collumn (index 11)
+	                    f.close()
+	                    totaltimesfloat = [] #convert items in totaltimes list from strings to floats
+	                    for item in totaltimes:
+		                    totaltimesfloat.append(float(item))
+	                    print sum(totaltimesfloat), "seconds"
+	                    return sum(totaltimesfloat), "seconds"
                 elif maskanswer == "3":
                     projname = raw_input('Enter the name of the project of which you want the to know the number of nights assigned: ')
                     if projname in datalist[14]:
