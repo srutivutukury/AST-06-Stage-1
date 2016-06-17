@@ -2,6 +2,9 @@
 import csv
 import sys
 import decimal
+import fileinput
+import re
+import itertools
 
 #makes excel cvs data into lists
 
