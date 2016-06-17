@@ -36,7 +36,7 @@ with open('Data.csv') as f:
 
 #options
 
-        answer = raw_input('Press 1 for information about PIs, Press 2 for information about projects, Press 5 to quit: ')
+        answer = raw_input('Press 1 for information about PIs, Press 2 for information about project, Press 3 for information about specific mask/target, Press 5 to quit: ')
 
 #PI Info
 
@@ -73,7 +73,7 @@ with open('Data.csv') as f:
 #Project Info             
 
         elif answer == "2":
-            projanswer = raw_input('Press 1 for a list of projects, Press 2 for the number of projects, Press 5 to quit: ')
+            projanswer = raw_input('Press 1 for a list of projects, Press 2 for the number of projects, Press 3 for information about specific target/mask, Press 5 to quit: ')
             if projanswer == "1":
                 print projlist
                 maskanswer = raw_input('For the masks used in a project, Press 1. For the total exposure of a project, Press 2. For the number of nights assigned to a project, Press 3. To quit, Press 5: ')
@@ -94,23 +94,11 @@ with open('Data.csv') as f:
                                 sys.exit()
                             elif numorquit == "5":
                                 sys.exit()
+                                
                         else:
                             print('That project is not part of this database. Please try again')
-                #elif maskanswer == "2":
-                    #total exposure time(elapsed time) on each mask(target name)
-                    def exposuretime3('Data.txt', targetname): #use data from txt file
-	                    with open('Data.txt') as f:
-		                    lines = f.readlines()
-		                    totaltimes = []
-		                    for line in lines:
-			                    if targetname in line:
-				                    totaltimes.append(line.split()[11]) #append value from elapsedtime/exposuretime collumn (index 11)
-	                    f.close()
-	                    totaltimesfloat = [] #convert items in totaltimes list from strings to floats
-	                    for item in totaltimes:
-		                    totaltimesfloat.append(float(item))
-	                    print sum(totaltimesfloat), "seconds"
-	                    return sum(totaltimesfloat), "seconds"
+                    #elif answer == "2":
+               
                 elif maskanswer == "3":
                     projname = raw_input('Enter the name of the project of which you want the to know the number of nights assigned: ')
                     if projname in datalist[14]:
@@ -130,7 +118,23 @@ with open('Data.csv') as f:
                 print projnumber
             elif projanswer == "5":
                 sys.exit()
-
+	
+	
+	elif answer == "3":  #total exposure time(elapsed time) on each mask(target name)
+		targetname = raw_input('Enter the name of the specific mask(target name) of which you want to know the total exposure time: ')
+        	with open('Data.txt') as f: #use data from txt file
+                	lines = f.readlines()
+                	totaltimes = []
+		        for line in lines:
+		        	if targetname in line:
+		        		totaltimes.append(line.split()[11]) #append value from elapsedtime/exposuretime collumn (index 11)
+		f.close()
+	        totaltimesfloat = [] #convert items in totaltimes list from strings to floats
+	        for item in totaltimes:
+	        	totaltimesfloat.append(float(item))
+	        print sum(totaltimesfloat), "seconds"
+	        return sum(totaltimesfloat), "seconds"
+		
 #exit loop           
     
         elif answer == "5":
