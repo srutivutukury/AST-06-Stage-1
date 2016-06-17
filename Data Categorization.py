@@ -98,8 +98,8 @@ with open('Data.csv') as f:
                             print('That project is not part of this database. Please try again')
                 #elif maskanswer == "2":
                     #function totals the exposure time(elapsed time) of the viewed target
-                    def exposuretime3(file_name, targetname): #use data from txt file
-	                    with open(file_name) as f:
+                    def exposuretime3('Data.txt', targetname): #use data from txt file
+	                    with open('Data.txt') as f:
 		                    lines = f.readlines()
 		                    totaltimes = []
 		                    for line in lines:
