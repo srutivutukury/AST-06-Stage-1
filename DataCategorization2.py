@@ -95,7 +95,7 @@ def project_info():
                     projnumber = len(projlist)
            if projanswer == "1":
                 print projlist
-                maskanswer = raw_input('For the masks used in a project, Press 1/nFor the total exposure of a project, Press 2/nFor the number of nights assigned to a project, Press 3/nTo quit, Press 5: ')
+                maskanswer = raw_input('For the masks used in a project, Press 1\nFor the total exposure of a project, Press 2\nFor the number of nights assigned to a project, Press 3\nTo quit, Press 5: ')
                 if maskanswer == "1":
                     projname = raw_input('Enter the name of the project of which you want the masks used listed: ')
                     if projname in datalist[14]:
